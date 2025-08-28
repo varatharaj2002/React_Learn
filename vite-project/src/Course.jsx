@@ -2,22 +2,28 @@
 // className=""
 // style={}
 
+//   const styles = {
+//         backgroundColor : "green",
+//     }
+import HTML from './assets/profile.png'
 const Course1 = "HTML"
 
-function Course(){
+function Course(props){
 
-    const styles = {
-        backgroundColor : "green",
-    }
     return(
-        <div style={styles}>
-            <img src="" alt="" />
-            <h3>{Course1}</h3>
-            <h3>{2+4}</h3>
-            <p>this code was HTML</p>
+        <div className="card">
+            <img src={props.image} alt="" />
+            <h5>{props.name}</h5>
+            <p>{props.price}</p>
         </div>
         
     );
 }
+
+
+// Course.defaultprops ={
+//     name : "code IO course",
+//     image : HTML
+// }
 
 export default Course
