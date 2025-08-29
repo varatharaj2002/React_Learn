@@ -5,25 +5,28 @@
 //   const styles = {
 //         backgroundColor : "green",
 //     }
-import HTML from './assets/profile.png'
-const Course1 = "HTML"
+// import HTML from './assets/profile.png'
+
+// cons
+// t Course1 = "HTML"
+
+// import PropTypes from 'prop-types'
+
 
 function Course(props){
-
     return(
         <div className="card">
             <img src={props.image} alt="" />
             <h5>{props.name}</h5>
             <p>{props.price}</p>
+            <span>{props.rating}</span>
         </div>
-        
     );
 }
 
 
-// Course.defaultprops ={
-//     name : "code IO course",
-//     image : HTML
-// }
+// Course.defaultprops
+
+// Course.defaultprops = { image: HTML }
 
 export default Course
