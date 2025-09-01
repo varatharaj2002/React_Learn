@@ -14,7 +14,9 @@
 
 
 function Course(props){
+
     return(
+        // props.name &&
         <div className="card">
             <img src={props.image} alt="" />
             <h5>{props.name}</h5>
