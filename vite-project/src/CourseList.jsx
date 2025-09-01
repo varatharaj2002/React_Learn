@@ -71,15 +71,16 @@ function CourseList(){
         {
             name: "react",
             price:599,
-            image:HTML
+            image:HTML,
+            rating : 5
         }
     ]
 
     Courses.sort((X,y) => y.price -X.price)
 
-    const vfmCourses = Courses.filter((Course) => Course.price<200)
+    // const vfmCourses = Courses.filter((Course) => Course.price<200)
 
-    const CoursesList = vfmCourses.map((course, index) => 
+    const CoursesList = Courses.map((course, index) => 
         <Course 
             key={index}
             name={course.name} 
