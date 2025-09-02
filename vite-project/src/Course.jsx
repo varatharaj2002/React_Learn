@@ -2,7 +2,7 @@
 // className=""
 // style={}
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 //   const styles = {
 //         backgroundColor : "green",
@@ -31,6 +31,13 @@ function Course(props){
         console.log(handelDelete)
         
     }
+
+    // useEffect(()=> {
+    //     console.log('inside course effect');
+    //     console.log(purchased)
+    // });
+
+    // const[dummy, setDummy] = useState(true);
 
     return(
         // props.name &&

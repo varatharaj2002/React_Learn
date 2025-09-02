@@ -45,7 +45,9 @@ import Course from './Course'
 import HTML from './assets/HTML.png'
 import CSS from './assets/CSS.jpg'
 import JS from './assets/JS.png'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
+
 
 function CourseList(){
 
@@ -80,6 +82,14 @@ function CourseList(){
         }
     ]);
 
+    const [dummy, setDummy] = useState(true);
+
+
+    useEffect(()=>{
+        console.log('use effect called');
+        console.log(dummy);
+    },[]);
+
     function handelDelete(id){
         const newCourses = Courses.filter((Course) => Course.id != id)
         setCourses(newCourses);
@@ -106,6 +116,7 @@ function CourseList(){
     return(
         <>
             {CoursesList}
+            <button onClick={()=> {setDummy(false)}}>Dummy button</button>
         </>
     );
 }
