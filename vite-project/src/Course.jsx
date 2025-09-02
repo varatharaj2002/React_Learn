@@ -2,6 +2,8 @@
 // className=""
 // style={}
 
+import { useState } from "react";
+
 //   const styles = {
 //         backgroundColor : "green",
 //     }
@@ -15,10 +17,16 @@
 
 function Course(props){
 
-    function BuyCourse(discount, e){
+    // let purchased = false;
+    const[purchased, setpurchased] = useState(false);
+
+    function BuyCourse(discount){
         // e is diff
         console.log(props.name,"purchased with" ,discount,"% discount");
-        console.log(e);
+        // console.log(e);
+        setpurchased(true)
+        console.log(purchased)
+        
     }
 
     return(
@@ -30,6 +38,8 @@ function Course(props){
             {/* <span>{props.rating}</span> */}
             <button onClick={(event)=> {BuyCourse(20,event)}}>Buy Now</button>
             {/* <button onClick={(event)=> {BuyCourse(20); console.log(event)}}>Buy Now</button> */}
+            <p>{purchased ? "already purchased" : "buy now"}</p>
+
         </div>
     );
 }
