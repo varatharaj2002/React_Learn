@@ -19,13 +19,16 @@ function Course(props){
 
     // let purchased = false;
     const[purchased, setpurchased] = useState(false);
+    const[discount, setdiscount] = useState(props.price);
 
-    function BuyCourse(discount){
+    function BuyCourse(amt){
         // e is diff
         console.log(props.name,"purchased with" ,discount,"% discount");
         // console.log(e);
         setpurchased(true)
+        setdiscount(discount-amt)
         console.log(purchased)
+        console.log(handelDelete)
         
     }
 
@@ -34,11 +37,14 @@ function Course(props){
         <div className="card">
             <img src={props.image} alt="" />
             <h5>{props.name}</h5>
-            <p>{props.price}</p>
+            {/* <p>{props.price}</p> */}
+            <p>{discount}</p>
             {/* <span>{props.rating}</span> */}
-            <button onClick={(event)=> {BuyCourse(20,event)}}>Buy Now</button>
+            <button onClick={()=> {BuyCourse(20)}}>discount</button>
             {/* <button onClick={(event)=> {BuyCourse(20); console.log(event)}}>Buy Now</button> */}
-            <p>{purchased ? "already purchased" : "buy now"}</p>
+            {/* <p>{purchased ? "already purchased" : "buy now"}</p> */}
+            <button onClick={()=> props.delete(props.id)}>Delete</button>
+            <p>{purchased} </p>
 
         </div>
     );
